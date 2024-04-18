@@ -1,7 +1,7 @@
 // src/Context/AuthContext/AuthContext.jsx
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { auth } from '../../Firebase/firebaseConfig';
+import { auth } from '../../Firebase/firebaseConfig.jsx';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -54,3 +54,5 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+
+export default AuthContext;
