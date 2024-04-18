@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
-import BookingForm from '../bookings/BookingsForm';
+import React from 'react';
+import BookingsForm from './bookings/BookingsForm';  // Adjust the path as necessary
+
 const App = () => {
-  const [userId, setUserId] = useState('123');  // Example user ID
+  // Set a static user ID for testing purposes
+  const testUserId = 1;
+
   return (
-    <div>
-      <h1>Booking System</h1>
-      <BookingForm userId={userId} />
+    <div className="App">
+      <h1>Booking Form Test</h1>
+      <BookingsForm userId={testUserId} />
     </div>
   );
 };
+
 export default App;
 
 
