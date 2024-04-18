@@ -7,6 +7,7 @@ const BookingsForm = ({ userId }) => {
   const [technician, setTechnician] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [submissionError, setSubmissionError] = useState('');
+  const [status, setStatus] = useState('');
   // Validation state
   const [errors, setErrors] = useState({});
   // Handle form submission
@@ -20,7 +21,8 @@ const BookingsForm = ({ userId }) => {
         technicianId: technician || null, // Convert empty string to null if no technician is chosen
         serviceType,
         issueDescription,
-        scheduledDate
+        scheduledDate,
+        status: "success"
       };
       try {
         setIsLoading(true);
@@ -57,6 +59,7 @@ const BookingsForm = ({ userId }) => {
     setTechnician('');
     setSubmissionError('');
     setErrors({});
+    setStatus('');
   };
   // Validate form fields
   const validateForm = () => {
