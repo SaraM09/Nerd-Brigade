@@ -67,6 +67,7 @@ const PaymentForm = () => {
     
    return (
     <>
+        <h1 className="title">Stripe Checkout</h1>
         { !success ? (
             <form onSubmit={handleSubmit}>
                 <fieldset className="FormGroup">

@@ -13,6 +13,7 @@ const StripeContainer = () => {
 
     return (
       <Elements stripe={stripeTestPromise}> 
+      
          <PaymentForm />
       </Elements>
     );
