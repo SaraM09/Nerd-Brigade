@@ -40,3 +40,10 @@
 .read-the-docs {
   color: #888;
 }
+
+.carousel-item img {
+  width: auto;  /* maintain aspect ratio */
+  height: 300px; /* adjust this value to fit your design */
+  object-fit: cover; /* this makes sure to cover the area without distorting the ratio */
+}
+
