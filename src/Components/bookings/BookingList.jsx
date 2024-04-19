@@ -72,7 +72,7 @@
 // export default BookingList;
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import bookingHelpers from '../Helpers/bookingHelpers'; // Ensure this path is correct
+import bookingHelpers from '../../Helpers/bookingHelpers.jsx'; // Ensure this path is correct
 import BookingItem from './BookingItem.jsx'; // Ensure this is correctly imported
 
 
