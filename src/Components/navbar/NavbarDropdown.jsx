@@ -9,7 +9,7 @@ const NavbarDropdown = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link as={Link} to="/Homepage">Homepage</Nav.Link>
+            {/* <Nav.Link as={Link} to="/Homepage">Homepage</Nav.Link> */}
             <Nav.Link as={Link} to="/login">Login</Nav.Link>
             <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
           <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
