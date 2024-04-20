@@ -95,38 +95,73 @@
 // };
 
 // export default App;
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
-import BookingForm from './Components/bookings/BookingsForm'; // Adjust the path and component name as necessary
-import BookingList from './Components/bookings/BookingList'; // Adjust the path and component name as necessary
-import Cart from './Components/cart/Cart'; // Adjust the path as necessary
-import PaymentForm from './Components/payments/PaymentForm'; // Adjust the path as necessary
-import ProductCarousel from './Components/products/ProductsCarousel'; // Adjust the path and component name as necessary
-import './App.css';
-import UserForm from './Components/userForm/UserForm'; // Adjust the path as necessary
-import TechnicianForm from './Components/technician/technicianForm'; // Adjust the path and component name as necessary
-import { Nav, NavDropdown } from 'react-bootstrap';
+// import React from 'react';
+// import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
+// import BookingForm from './Components/bookings/BookingsForm'; // Adjust the path and component name as necessary
+// import BookingList from './Components/bookings/BookingList'; // Adjust the path and component name as necessary
+// import Cart from './Components/cart/Cart'; // Adjust the path as necessary
+// import PaymentForm from './Components/payments/PaymentForm'; // Adjust the path as necessary
+// import ProductCarousel from './Components/products/ProductsCarousel'; // Adjust the path and component name as necessary
+// import './App.css';
+// import UserForm from './Components/userForm/UserForm'; // Adjust the path as necessary
+// import TechnicianForm from './Components/technician/technicianForm'; // Adjust the path and component name as necessary
+// import { Nav, NavDropdown } from 'react-bootstrap';
+// import TechSignUp from './Components/TechSignUp/TechSignUp';
+//  import NavbarDropdown from './Components/navbar/NavbarDropdown'
+// const NavbarDropdown = () => {
+//     return (
+//         <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+//             <NavDropdown.Item as={NavLink} to="/">Homepage</NavDropdown.Item>
+//             <NavDropdown.Item as={NavLink} to="/cart">Cart</NavDropdown.Item>
+//             <NavDropdown.Item as={NavLink} to="/payment">Payment</NavDropdown.Item>
+//             <NavDropdown.Item as={NavLink} to="/products">Products</NavDropdown.Item>
+//             <NavDropdown.Item as={NavLink} to="/user">User Form</NavDropdown.Item>
+//             <NavDropdown.Item as={NavLink} to="/technician">Technician Form</NavDropdown.Item>
+//             <NavDropdown.Item as={NavLink} to="/booking">Booking Form</NavDropdown.Item>
+//         </NavDropdown>
+//     );
+// };
 
-const NavbarDropdown = () => {
-    return (
-        <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-            <NavDropdown.Item as={NavLink} to="/">Homepage</NavDropdown.Item>
-            <NavDropdown.Item as={NavLink} to="/cart">Cart</NavDropdown.Item>
-            <NavDropdown.Item as={NavLink} to="/payment">Payment</NavDropdown.Item>
-            <NavDropdown.Item as={NavLink} to="/products">Products</NavDropdown.Item>
-            <NavDropdown.Item as={NavLink} to="/user">User Form</NavDropdown.Item>
-            <NavDropdown.Item as={NavLink} to="/technician">Technician Form</NavDropdown.Item>
-            <NavDropdown.Item as={NavLink} to="/booking">Booking Form</NavDropdown.Item>
-        </NavDropdown>
-    );
-};
+// const App = () => {
+//     return (
+//         <Router>
+//           <BookingList />
+//            <ProductCarousel />
+//             <NavbarDropdown />
+//             <Routes>
+//                 <Route path="/" element={<BookingList />} />
+//                 <Route path="/cart" element={<Cart />} />
+//                 <Route path="/payment" element={<PaymentForm />} />
+//                 <Route path="/products" element={<ProductCarousel />} />
+//                 <Route path="/user" element={<UserForm />} />
+//                 <Route path="/technician" element={<TechnicianForm />} />
+//                 <Route path="/booking" element={<BookingForm />} />
+//             </Routes>
+//         </Router>
+//     );
+// };
+
+
+
+// export default App;
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import BookingForm from './Components/bookings/BookingsForm';
+import BookingList from './Components/bookings/BookingList';
+import Cart from './Components/cart/Cart';
+import PaymentForm from './Components/payments/PaymentForm';
+import ProductCarousel from './Components/products/ProductsCarousel';
+import './App.css';
+import UserForm from './Components/userForm/UserForm';
+import TechnicianForm from './Components/technician/technicianForm';
+// import Header from './Components/header/Header'; // Import the Header component
+import NavbarDropdown from './Components/navbar/NavbarDropdown';
 
 const App = () => {
     return (
         <Router>
-          <BookingList />
+            < NavbarDropdown/> 
            <ProductCarousel />
-            <NavbarDropdown />
             <Routes>
                 <Route path="/" element={<BookingList />} />
                 <Route path="/cart" element={<Cart />} />

@@ -13,10 +13,13 @@ const NavbarDropdown = () => {
             <Nav.Link as={Link} to="/login">Login</Nav.Link>
             <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
           <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-            <NavDropdown.Item as={Link} to="TransactionList">Transaction List</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="CategoryList">Category List</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="Budget">Budget</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="ExpenseChart">Expense Chart</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/">Homepage</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/cart">Cart</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/payment">Payment</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/products">Products</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/user">User Form</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/technician">Technician Form</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/booking">Booking Form</NavDropdown.Item>
           </NavDropdown>
           </Nav>
         </Navbar.Collapse>
