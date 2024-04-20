@@ -124,6 +124,7 @@ const NavbarDropdown = () => {
 const App = () => {
     return (
         <Router>
+          <BookingList />
            <ProductCarousel />
             <NavbarDropdown />
             <Routes>
