@@ -68,11 +68,13 @@ import './App.css';
 import UserForm from './Components/userForm/UserForm'; // Adjust the path as necessary
 import TechnicianForm from './Components/technician/technicianForm'; // Adjust the path and component name as necessary
 import NavbarDropdown from './navbar/NavbarDropdown'; // Adjust the path as necessary
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
  return (
     <Router>
       <NavbarDropdown />
+      <ProductCarousel />
       <Routes>
         <Route path="/" element={<BookingList />} />
         <Route path="/cart" element={<Cart />} />
