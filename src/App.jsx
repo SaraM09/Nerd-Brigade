@@ -67,7 +67,7 @@ import ProductCarousel from './Components/products/ProductsCarousel'; // Adjust 
 import './App.css';
 import UserForm from './Components/userForm/UserForm'; // Adjust the path as necessary
 import TechnicianForm from './Components/technician/technicianForm'; // Adjust the path and component name as necessary
-import NavbarDropdown from './Components/navbar/NavbarDropdown'; // Adjust the path as necessary
+import NavbarDropdown from './navbar/NavbarDropdown'; // Adjust the path as necessary
 
 const App = () => {
  return (
