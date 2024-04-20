@@ -14,17 +14,17 @@ const BookingList = () => {
     const [bookingList, setBookingList] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');           
 
-    useEffect(() => {
-        const fetchBookings = async () => {
-            try {
-                const bookings = await bookingHelpers.getAll();
-                setBookings(bookings);
-            } catch (error) {
-                console.error('Error fetching bookings:', error);
-            }
-        };
-        fetchBookings();
-    }, []);
+    // useEffect(() => {
+    //     const fetchBookings = async () => {
+    //         try {
+    //             const bookings = await bookingHelpers.getAll();
+    //             setBookings(bookings);
+    //         } catch (error) {
+    //             console.error('Error fetching bookings:', error);
+    //         }
+    //     };
+    //     fetchBookings();
+    // }, []);
     const handleSearch = (event) => {
         setSearchTerm(event.target.value);
     };

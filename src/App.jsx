@@ -158,6 +158,7 @@ import TechnicianForm from './Components/technician/technicianForm';
 import NavbarDropdown from './Components/navbar/NavbarDropdown';
 
 const App = () => {
+    const userId = 1;
     return (
         <Router>
             < NavbarDropdown/> 
@@ -170,7 +171,7 @@ const App = () => {
                 <Route path="/products" element={<ProductCarousel />} />
                 <Route path="/user" element={<UserForm />} />
                 <Route path="/technician" element={<TechnicianForm />} />
-                <Route path="/booking" element={<BookingForm />} />
+                <Route path="/booking" element={<BookingForm userId={userId}/>} />
             </Routes>
         </Router>
     );
