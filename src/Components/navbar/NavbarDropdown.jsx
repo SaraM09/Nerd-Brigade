@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const NavbarDropdown = () => {
     return (
        <Navbar className='navbar' fixed="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand as={Link} to="/">Nerd Bragde</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">Nerd Bragade</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">

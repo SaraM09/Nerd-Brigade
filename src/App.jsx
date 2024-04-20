@@ -161,6 +161,7 @@ const App = () => {
     return (
         <Router>
             < NavbarDropdown/> 
+        <BookingList />
            <ProductCarousel />
             <Routes>
                 <Route path="/" element={<BookingList />} />
