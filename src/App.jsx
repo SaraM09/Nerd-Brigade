@@ -156,24 +156,55 @@ import UserForm from './Components/userForm/UserForm';
 import TechnicianForm from './Components/technician/technicianForm';
 // import Header from './Components/header/Header'; // Import the Header component
 import NavbarDropdown from './Components/navbar/NavbarDropdown';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+
+import Profile from './Components/profile/Profile';
+import SignUp from './Components/signUp/SignUp';
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY)
 
 const App = () => {
     const userId = 1;
     return (
         <Router>
-            < NavbarDropdown/> 
-        <BookingList />
-           <ProductCarousel />
+            <NavbarDropdown />
+            <BookingList />
             <Routes>
-                <Route path="/" element={<BookingList />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/payment" element={<PaymentForm />} />
-                <Route path="/products" element={<ProductCarousel />} />
+                <Route path="/signup" element={<SignUp />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/" element={<ProductCarousel />} />
+                <Route path="/payment" element={
+                    <Elements stripe={stripePromise}>
+                        <PaymentForm />
+                    </Elements>
+                } />
                 <Route path="/user" element={<UserForm />} />
                 <Route path="/technician" element={<TechnicianForm />} />
-                <Route path="/booking" element={<BookingForm userId={userId}/>} />
+                <Route path="/booking" element={<BookingForm userId={userId} />} />
             </Routes>
         </Router>
+    //     <Router>
+    //         < NavbarDropdown/> 
+    //     <BookingList />
+          
+    //         <Routes>
+    //         <Route path = "/signup" element={<SignUp />} />
+    //         <Route path="/profile" element={<Profile />} />
+    //         <Route path="/" element={<ProductCarousel />} />
+    //             <Route path="/payment" element={<PaymentForm />} />
+              
+    //             <Route path="/user" element={<UserForm />} />
+    //             <Route path="/technician" element={<TechnicianForm />} />
+    //             <Route path="/booking" element={<BookingForm userId={userId}/>} />
+    //             <Route path="/payment" element={
+    //      <Route path="/payment" element={
+    //         <Elements stripe={stripePromise}>
+    //           <PaymentForm  />
+    //         </Elements>
+    //       } />
+    //     } />
+    //         </Routes>
+    //     </Router>
     );
 };
 

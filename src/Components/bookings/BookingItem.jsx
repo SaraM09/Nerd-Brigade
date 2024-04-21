@@ -46,7 +46,27 @@
 // });     
 
 // export default BookingItem; 
-import React from 'react';
+// import React from 'react';
+
+// const BookingItem = ({ booking, onDelete, onEdit }) => {
+//     return (
+//         <div className="booking-item">
+//             <h3>{booking.issueDescription}</h3>
+//             <p>Service Type: {booking.serviceType}</p>
+//             <p>Status: {booking.status}</p>
+//             <p>Scheduled Date: {new Date(booking.scheduledDate).toLocaleDateString()}</p>
+//             {booking.costEstimate && <p>Cost Estimate: ${booking.costEstimate.toFixed(2)}</p>}
+//             <div className="booking-item-actions">
+//                 <button onClick={() => onEdit(booking.id)}>Edit</button>
+//                 <button onClick={() => onDelete(booking.id)}>Delete</button>
+//             </div>
+//         </div>
+//     );
+// };
+
+// export default BookingItem;
+
+import React from "react";
 
 const BookingItem = ({ booking, onDelete, onEdit }) => {
     return (

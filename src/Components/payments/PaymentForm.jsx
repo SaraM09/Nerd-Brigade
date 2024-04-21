@@ -67,22 +67,39 @@ const PaymentForm = () => {
     
    return (
     <>
-        <h1 className="title">Stripe Checkout</h1>
-        { !success ? (
+        <h1 className="title display-4 mb-3">Stripe Checkout</h1>
+        {!success ? (
             <form onSubmit={handleSubmit}>
                 <fieldset className="FormGroup">
-                    <div className="FormRow">
+                    <div className="FormRow mb-3">
                         <CardElement options={CARD_OPTIONS} />
                     </div>
                 </fieldset>
-                <button>Pay</button>
+                <button type="submit" className="btn btn-primary " disabled={!stripe}>Pay</button>
             </form>
         ) : (
-            <div>
-                <h2>You have successfully paid</h2>
+            <div className="alert alert-success" role="alert">
+                <h2 className="alert-heading">You have successfully paid</h2>
             </div>
         )}
     </>
+//     <>
+//         <h1 className="title">Stripe Checkout</h1>
+//         { !success ? (
+//             <form onSubmit={handleSubmit}>
+//                 <fieldset className="FormGroup">
+//                     <div className="FormRow">
+//                         <CardElement options={CARD_OPTIONS} />
+//                     </div>
+//                 </fieldset>
+//                 <button>Pay</button>
+//             </form>
+//         ) : (
+//             <div>
+//                 <h2>You have successfully paid</h2>
+//             </div>
+//         )}
+//     </>
    )    
 
 

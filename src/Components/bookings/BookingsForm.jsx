@@ -75,49 +75,101 @@ const BookingsForm = ({ userId }) => {
     return newErrors;
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="serviceType">Service Type:</label>
-        <select id="serviceType" value={serviceType} onChange={e => setServiceType(e.target.value)}>
-          <option value="">Select a Service</option>
-          <option value="repair">Repair</option>
-          <option value="maintenance">Maintenance</option>
-          <option value="installation">Installation</option>
-        </select>
-        {errors.serviceType && <p className="error">{errors.serviceType}</p>}
-      </div>
-      <div>
-        <label htmlFor="issueDescription">Issue Description:</label>
-        <textarea
-          id="issueDescription"
-          value={issueDescription}
-          onChange={e => setIssueDescription(e.target.value)}
-        />
-        {errors.issueDescription && <p className="error">{errors.issueDescription}</p>}
-      </div>
-      <div>
-        <label htmlFor="scheduledDate">Scheduled Date:</label>
-        <input
-          type="date"
-          id="scheduledDate"
-          value={scheduledDate}
-          onChange={e => setScheduledDate(e.target.value)}
-        />
-        {errors.scheduledDate && <p className="error">{errors.scheduledDate}</p>}
-      </div>
-      <div>
-        <label htmlFor="technician">Technician (optional):</label>
-        <select id="technician" value={technician} onChange={e => setTechnician(e.target.value)}>
-          <option value="">No preference</option>
-          <option value="tech1">Technician 1</option>
-          <option value="tech2">Technician 2</option>
-        </select>
-      </div>
-      {submissionError && <p className="error">{submissionError}</p>}
-      <button type="submit" disabled={isLoading}>
-        {isLoading ? 'Submitting...' : 'Submit'}
-      </button>
-    </form>
+    <form onSubmit={handleSubmit} className="container mt-4">
+  <div className="mb-3">
+    <label htmlFor="serviceType" className="form-label">Service Type:</label>
+    <select id="serviceType" value={serviceType} onChange={e => setServiceType(e.target.value)} className="form-select">
+      <option value="">Select a Service</option>
+      <option value="repair">Repair</option>
+      <option value="maintenance">Maintenance</option>
+      <option value="installation">Installation</option>
+    </select>
+    {errors.serviceType && <p className="text-danger">{errors.serviceType}</p>}
+  </div>
+  <div className="mb-3">
+    <label htmlFor="issueDescription" className="form-label">Issue Description:</label>
+    <textarea
+      id="issueDescription"
+      value={issueDescription}
+      onChange={e => setIssueDescription(e.target.value)}
+      className="form-control"
+    />
+    {errors.issueDescription && <p className="text-danger">{errors.issueDescription}</p>}
+  </div>
+  <div className="mb-3">
+    <label htmlFor="scheduledDate" className="form-label">Scheduled Date:</label>
+    <input
+      type="date"
+      id="scheduledDate"
+      value={scheduledDate}
+      onChange={e => setScheduledDate(e.target.value)}
+      className="form-control"
+    />
+    {errors.scheduledDate && <p className="text-danger">{errors.scheduledDate}</p>}
+  </div>
+  <div className="mb-3">
+    <label htmlFor="technician" className="form-label">Technician (optional):</label>
+    <select id="technician" value={technician} onChange={e => setTechnician(e.target.value)} className="form-select">
+      <option value="">No preference</option>
+      <option value="tech1">Technician 1</option>
+      <option value="tech2">Technician 2</option>
+    </select>
+  </div>
+  {submissionError && <p className="text-danger">{submissionError}</p>}
+  <button type="submit" disabled={isLoading} className="btn btn-primary">
+    {isLoading ? 'Submitting...' : 'Submit'}
+  </button>
+</form>
+
+
+
+
+
+
+
+    // <form onSubmit={handleSubmit}>
+    //   <div>
+    //     <label htmlFor="serviceType">Service Type:</label>
+    //     <select id="serviceType" value={serviceType} onChange={e => setServiceType(e.target.value)}>
+    //       <option value="">Select a Service</option>
+    //       <option value="repair">Repair</option>
+    //       <option value="maintenance">Maintenance</option>
+    //       <option value="installation">Installation</option>
+    //     </select>
+    //     {errors.serviceType && <p className="error">{errors.serviceType}</p>}
+    //   </div>
+    //   <div>
+    //     <label htmlFor="issueDescription">Issue Description:</label>
+    //     <textarea
+    //       id="issueDescription"
+    //       value={issueDescription}
+    //       onChange={e => setIssueDescription(e.target.value)}
+    //     />
+    //     {errors.issueDescription && <p className="error">{errors.issueDescription}</p>}
+    //   </div>
+    //   <div>
+    //     <label htmlFor="scheduledDate">Scheduled Date:</label>
+    //     <input
+    //       type="date"
+    //       id="scheduledDate"
+    //       value={scheduledDate}
+    //       onChange={e => setScheduledDate(e.target.value)}
+    //     />
+    //     {errors.scheduledDate && <p className="error">{errors.scheduledDate}</p>}
+    //   </div>
+    //   <div>
+    //     <label htmlFor="technician">Technician (optional):</label>
+    //     <select id="technician" value={technician} onChange={e => setTechnician(e.target.value)}>
+    //       <option value="">No preference</option>
+    //       <option value="tech1">Technician 1</option>
+    //       <option value="tech2">Technician 2</option>
+    //     </select>
+    //   </div>
+    //   {submissionError && <p className="error">{submissionError}</p>}
+    //   <button type="submit" disabled={isLoading}>
+    //     {isLoading ? 'Submitting...' : 'Submit'}
+    //   </button>
+    // </form>
   );
 };
 

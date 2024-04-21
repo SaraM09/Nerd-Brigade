@@ -10,8 +10,8 @@ const NavbarDropdown = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             {/* <Nav.Link as={Link} to="/Homepage">Homepage</Nav.Link> */}
-            <Nav.Link as={Link} to="/login">Login</Nav.Link>
-            <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
+            <Nav.Link as={Link} to="/signup">SignUp</Nav.Link>
+            <Nav.Link as={Link} to="/profile">LogIn</Nav.Link>
           <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
             <NavDropdown.Item as={Link} to="/">Homepage</NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/cart">Cart</NavDropdown.Item>
