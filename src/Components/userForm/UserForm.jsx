@@ -207,6 +207,7 @@ const UserForm = () => {
     }
     return formErrors;
   };
+ 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formErrors = validateForm();
@@ -222,6 +223,9 @@ const UserForm = () => {
         });
         if (!response.ok) {
           const errorData = await response.json();
+          if (errorData.message.includes('Unique constraint failed on the fields: (`username`)')) {
+            throw new Error('This username is already in use. Please choose another.');
+          }
           throw new Error(errorData.message || 'Failed to create user. Please try again.');
         }
         alert('User created successfully!');
@@ -236,6 +240,15 @@ const UserForm = () => {
       setErrors(formErrors);
     }
   };
+  
+
+  
+  
+  
+  
+  
+  
+
   const resetForm = () => {
     setFormData({
       username: '',
