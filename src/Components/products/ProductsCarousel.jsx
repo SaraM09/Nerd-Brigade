@@ -1,10 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; 
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function ProductCarousel() {
-  const [products, setProducts] = React.useState([]);
+  const [products, setProducts] = useState([]);
   const carouselRef = useRef(null);
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     axios.get('http://localhost:1119/products')
@@ -22,6 +24,13 @@ function ProductCarousel() {
     }
   }, [products]);
 
+  // Function to handle the "Buy Now" action
+  const handleBuyNow = (productId) => {
+    console.log('Buying product:', productId);
+    // Redirect to the carts page
+    navigate('/payment'); 
+  };
+
   return (
     <div ref={carouselRef} id="productCarousel" className="carousel slide" data-bs-ride="carousel">
       <div className="carousel-inner">
@@ -31,6 +40,7 @@ function ProductCarousel() {
             <div className="carousel-caption d-none d-md-block">
               <h5>{product.title}</h5>
               <p>${product.price}</p>
+              <button className="btn btn-primary" onClick={() => handleBuyNow(product.id)}>Buy Now</button>
             </div>
           </div>
         ))}
@@ -48,6 +58,7 @@ function ProductCarousel() {
 }
 
 export default ProductCarousel;
+
 
 
 

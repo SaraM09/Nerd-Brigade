@@ -1,7 +1,8 @@
 // src/Context/AuthContext/AuthContext.jsx
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { auth } from '../../Firebase/firebaseConfig.jsx';
+import React, { createContext, useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { auth } from '../../Firebase/firebaseConfig';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -10,8 +11,6 @@ import {
 } from 'firebase/auth';
 
 const AuthContext = createContext();
-
-export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -38,7 +37,7 @@ export const AuthProvider = ({ children }) => {
       setLoading(false);
     });
 
-    return unsubscribe;
+    return unsubscribe; // Clean up the subscription on unmount
   }, []);
 
   const value = {
@@ -55,4 +54,10 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
+
+AuthProvider.propTypes = {
+  children: PropTypes.node.isRequired
+};
 export default AuthContext;
+
+
